@@ -1,0 +1,58 @@
+{
+	"name": "Seq2Seq-ReversingModel",
+	"n_gpu": 1,
+	"arch": {
+		"type": "ReversingModel",
+		"args": {
+			"encoder_emb_dim": 128,
+			"decoder_emb_dim": 128,
+			"hidden_dim": 400,
+			"num_layers": 3,
+			"max_len": 16,
+			"bidirectional": true
+		}
+	},
+	"data_loader": {
+		"type": "MnistDataLoader",
+		"args": {
+			"data_dir": "data/",
+			"batch_size": 128,
+			"shuffle": true,
+			"validation_split": 0.1,
+			"num_workers": 2
+		}
+	},
+	"optimizer": {
+		"optimizer": {
+			"type": "Adamax",
+			"args": {
+				"lr": 5e-3
+			}
+		},
+		"lr_scheduler": {
+			"type": "StepLR",
+			"args": {
+				"step_size": 25,
+				"gamma": 0.7
+			}
+		},
+		"grad_clip_norm": 4
+	},
+	"criterion": "AvgPerplexity",
+	"metrics": [
+		"Accuracy"
+	],
+	"trainer": {
+		"epochs": 25,
+		"save_dir": "saved/",
+		"save_period": 1,
+		"verbosity": 2,
+		"monitor": "min train_loss",
+		"early_stop": 100,
+		"len_epoch":235,
+		"tensorboard": true
+	},
+	"difficulty":1,
+	"resume": null,
+	"resumed_from": null
+}
