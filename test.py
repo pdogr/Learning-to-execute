@@ -53,7 +53,8 @@ def main(config, model_path):
         #     seq = src_preprocessing(seq)
 
         tgt_seq, attn_weights = model.predict(seq)
-        print(tgt_seq, attn_weights)
+        print(tgt_seq)
+        print(attn_weights)
         if attn_weights is not None:
             fig = sns.heatmap(attn_weights, xticklabels=seq, yticklabels=tgt_seq)
             fig.xaxis.set_label_position('top')
