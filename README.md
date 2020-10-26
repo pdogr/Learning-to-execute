@@ -3,6 +3,21 @@
 This repo contains the attention based implementation of ideas devised in the paper [Learning to Execute](https://arxiv.org/abs/1410.4615) with [PyTorch](https://github.com/pytorch/pytorch) and [TorchText](https://github.com/pytorch/text) using Python 3.8.
 .
 
+## Example outputs
+### Reversing task
+
+Output             |  Attn Wts
+:-------------------------:|:-------------------------:
+![](https://github.com/plaxi0s/Learning-to-execute/blob/master/examples/reverse_example/r1.png)  |  ![](https://github.com/plaxi0s/Learning-to-execute/blob/master/examples/reverse_example/r1_attn_wts.png)
+![](https://github.com/plaxi0s/Learning-to-execute/blob/master/examples/reverse_example/r2.png)  |  ![](https://github.com/plaxi0s/Learning-to-execute/blob/master/examples/reverse_example/r2_attn_wts.png)
+
+### Addition task
+
+Output             |  Attn Wts
+:-------------------------:|:-------------------------:
+![](https://github.com/plaxi0s/Learning-to-execute/blob/master/examples/add_example/a1.png)  |  ![](https://github.com/plaxi0s/Learning-to-execute/blob/master/examples/add_example/a1_attn_wts.png)
+![](https://github.com/plaxi0s/Learning-to-execute/blob/master/examples/add_example/a2.png)  |  ![](https://github.com/plaxi0s/Learning-to-execute/blob/master/examples/add_example/a2_attn_wts.png)
+
 
 ## Getting Started
 
@@ -58,5 +73,3 @@ optional arguments:
                         indices of GPUs to enable (default: all)
 ```
 
-
-**If you find any mistakes please do not hesitate to [submit an issue](https://github.com/plaxi0s/Learning-to-execute/issues/new). I welcome any feedback, positive or negative!**
